@@ -1,0 +1,66 @@
+TALLER PRODUCT - LARAVEL PROJECT
+SETUP INSTRUCTIONS
+
+REQUISITOS PREVIOS:
+- PHP 8.1+
+- Composer
+- MySQL/MariaDB
+- XAMPP/WAMP (entorno local)
+
+PASOS DE INSTALACIÓN:
+
+1. INSTALAR DEPENDENCIAS
+   composer install
+
+2. CONFIGURAR BASE DE DATOS
+   a) Copiar .env.example a .env
+   b) Editar .env con:
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=taller_product
+      DB_USERNAME=root
+      DB_PASSWORD=
+   c) Crear BD 'taller_product' en MySQL
+   d) php artisan key:generate
+
+3. EJECUTAR MIGRACIONES
+   php artisan migrate
+
+4. INICIAR SERVIDOR
+   php artisan serve
+
+5. ACCEDER A LA APP
+   http://127.0.0.1:8000/products
+
+FUNCIONALIDADES:
+✅ Crear productos con validaciones
+✅ Listar productos (ID + nombre)
+✅ Ver detalles completos
+✅ Eliminar productos
+✅ Navegación entre vistas
+
+ESTRUCTURA DEL PROYECTO:
+- ProductController.php (Controlador)
+- Product.php (Modelo)
+- resources/views/products/ (Vistas)
+- routes/web.php (Rutas)
+- database/migrations/ (BD)
+
+SOLUCIÓN DE PROBLEMAS:
+- Error BD: Verificar MySQL y credenciales
+- Class not found: composer dump-autoload
+- Permisos: Verificar storage/ y bootstrap/cache/
+- Migración: Verificar BD existe
+
+COMANDOS ÚTILES:
+- php artisan migrate:status
+- php artisan route:list
+- php artisan config:clear
+- php artisan view:clear
+
+SOPORTE:
+Logs en storage/logs/laravel.log
+
+VERSIÓN:
+Laravel 12.25.0, PHP 8.2.12, MySQL
